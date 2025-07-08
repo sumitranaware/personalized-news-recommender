@@ -2,7 +2,9 @@
 import axios from "axios";
 
 const fastApi = axios.create({
-  baseURL: "http://localhost:8000", 
+ baseURL: "https://personalizednewsrecommenderapp-fastapi.onrender.com"
+
+
 });
 
 export const fetchRecommendations = (payload) => {
