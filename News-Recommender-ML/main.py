@@ -8,14 +8,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["https://personalizednewsrecommenderapp-react.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-SPRING_API_URL = "http://news-backend:8080/api/news/fetch?category=general"  
-
+SPRING_API_URL = "https://personalizednewsrecommenderapp-33ca.onrender.com/api/news/fetch?category=general"
+ 
 @app.post("/recommend")
 def recommend(request: RecommendationRequest):
     print("Received interests:", request.interests)
