@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:newsdata
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+gnews:
+  api-key: 0e90b195822201e20ce6b26e82b21162
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
