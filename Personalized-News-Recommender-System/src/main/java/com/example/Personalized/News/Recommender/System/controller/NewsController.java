@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://personalizednewsrecommenderapp-react.onrender.com")
 @RestController
 @RequestMapping("/api/news")
 @RequiredArgsConstructor
