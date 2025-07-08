@@ -1,25 +1,19 @@
+# ---------- Build image ----------
 FROM maven:3.9.4-eclipse-temurin-21 as builder
-
 
 WORKDIR /app
 
-COPY pom.xml .
+COPY pom.xml ./
 COPY .mvn .mvn
-COPY mvnw .
-
-# ✅ Fix permission issue
+COPY mvnw ./
 RUN chmod +x mvnw
-
-# Pre-download dependencies
 RUN ./mvnw dependency:go-offline
 
 COPY src ./src
-
-# Build the application
 RUN ./mvnw clean package -DskipTests
 
 # ---------- Runtime image ----------
-FROM eclipse-temurin:17-jdk-jammy
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
