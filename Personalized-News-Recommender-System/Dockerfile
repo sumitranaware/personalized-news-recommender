@@ -1,27 +1,28 @@
-
-FROM maven:3.9.6-eclipse-temurin-21 AS builder
+FROM maven:3.9.4-eclipse-temurin-17 as builder
 
 WORKDIR /app
 
 COPY pom.xml .
 COPY .mvn .mvn
 COPY mvnw .
+
+# ✅ Fix permission issue
+RUN chmod +x mvnw
+
+# Pre-download dependencies
 RUN ./mvnw dependency:go-offline
 
 COPY src ./src
+
+# Build the application
 RUN ./mvnw clean package -DskipTests
 
-
-
-FROM eclipse-temurin:21-jdk-jammy
+# ---------- Runtime image ----------
+FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
-
-COPY wait-for-it.sh .
-RUN chmod +x wait-for-it.sh
-
 COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["./wait-for-it.sh", "mysql-db:3306", "--timeout=60", "--strict", "--", "java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
