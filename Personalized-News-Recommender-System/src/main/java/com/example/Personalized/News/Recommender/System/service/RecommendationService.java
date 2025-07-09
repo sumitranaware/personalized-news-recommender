@@ -10,7 +10,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 @RequiredArgsConstructor
 public class RecommendationService {
-    private final WebClient pythonClient=WebClient.create("http://localhost:8000");
+    private final WebClient pythonClient = WebClient.create("https://personalizednewsrecommenderapp-fastapi-a1t2.onrender.com");
+
 
     public JsonNode getRecommendations(RecommendationRequestDto dto){
         return pythonClient.post()

@@ -6,8 +6,8 @@ on:
 
 env:
   IMAGE_BACKEND: sumitranaware24/personalizednewsrecommenderapp-springboot-backend:v6
-  IMAGE_FRONTEND: sumitranaware24/personalizednewsrecommenderapp-react-frontend:latest
-  IMAGE_ML: sumitranaware24/personalizednewsrecommenderapp-fastapi-ml:latest
+  IMAGE_FRONTEND: sumitranaware24/personalizednewsrecommenderapp-react-frontend:v1  
+  IMAGE_ML: sumitranaware24/personalizednewsrecommenderapp-fastapi-ml:v1 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
