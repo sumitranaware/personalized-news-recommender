@@ -2,9 +2,8 @@
 import axios from "axios";
 
 const springApi = axios.create({
-  baseURL: "https://personalizednewsrecommenderapp-backend.onrender.com/api/news"  // <-- use your actual Spring Boot deployed URL
+  baseURL: "https://personalizednewsrecommenderapp-33ca.onrender.com/api/news" // ✅ Correct URL
 });
-
 
 export const fetchArticles = (category = "general") => {
   return springApi.get(`/fetch?category=${category}`);
