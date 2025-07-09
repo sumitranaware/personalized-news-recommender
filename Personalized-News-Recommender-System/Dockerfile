@@ -1,4 +1,4 @@
-# ---------- Build image ----------
+
 FROM maven:3.9.4-eclipse-temurin-21 as builder
 
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 RUN ./mvnw clean package -DskipTests
 
-# ---------- Runtime image ----------
+
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app

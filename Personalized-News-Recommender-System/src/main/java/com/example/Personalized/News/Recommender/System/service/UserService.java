@@ -3,11 +3,10 @@ package com.example.Personalized.News.Recommender.System.service;
 import com.example.Personalized.News.Recommender.System.dto.RecommendationRequestDto;
 import com.example.Personalized.News.Recommender.System.model.User;
 import com.example.Personalized.News.Recommender.System.repository.UserRepository;
-import lombok.Data;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import java.util.Optional;
 

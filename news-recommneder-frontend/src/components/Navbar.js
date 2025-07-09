@@ -8,7 +8,9 @@ const Navbar = () => (
       <Link className="navbar-brand" to="/">News Recommender</Link>
       <div>
         <Link className="btn btn-outline-light me-2" to="/">Home</Link>
-        {/* Removed Recommendations link from navbar */}
+        {
+          
+        }
       </div>
     </div>
   </nav>

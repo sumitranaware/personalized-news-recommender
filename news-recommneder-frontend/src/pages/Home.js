@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchArticles } from "../api/springApi"; // Ensure this fetches general news
+import { fetchArticles } from "../api/springApi"; 
 import moment from "moment";
 
 const Home = () => {
